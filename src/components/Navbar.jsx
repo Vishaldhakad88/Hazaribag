@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaInstagram, FaGithub, FaDribbble, FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo/logo.png"; // <--- Your logo
+import logo from "../assets/logo/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,14 +24,13 @@ export default function Navbar() {
         <Link to="/contact"><li className="hover:text-gray-300 cursor-pointer">Contact</li></Link>
       </ul>
 
-      {/* Icons + Download Button Desktop */}
+      {/* Desktop Icons + Button */}
       <div className="hidden md:flex items-center gap-6 text-xl">
         <FaInstagram className="cursor-pointer" />
         <FaGithub className="cursor-pointer" />
         <FaDribbble className="cursor-pointer" />
         <FaLinkedin className="cursor-pointer" />
 
-        {/* Download App Button */}
         <Link to="/download">
           <button className="ml-4 bg-orange-400 hover:bg-orange-600 px-5 py-2 rounded-md text-white text-lg shadow-md">
             Download App
@@ -40,10 +39,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu Button */}
-      <button
-        onClick={() => setOpen(true)}
-        className="md:hidden text-3xl"
-      >
+      <button onClick={() => setOpen(true)} className="md:hidden text-3xl">
         <RxHamburgerMenu />
       </button>
 
@@ -58,7 +54,6 @@ export default function Navbar() {
             <RxCross2 />
           </button>
 
-          {/* Mobile Links */}
           <ul className="flex flex-col gap-6 mt-4">
             <Link to="/" onClick={() => setOpen(false)}>
               <li className="flex items-center gap-2 cursor-pointer border-b border-gray-700 pb-1">↗ Home</li>
@@ -81,7 +76,6 @@ export default function Navbar() {
             </Link>
           </ul>
 
-          {/* Mobile Download Button */}
           <Link to="/download" onClick={() => setOpen(false)}>
             <button className="mt-4 bg-blue-500 w-full hover:bg-blue-600 px-5 py-3 rounded-md text-white text-xl shadow-md">
               Download App
@@ -91,7 +85,7 @@ export default function Navbar() {
           {/* Mobile Icons */}
           <div className="flex gap-6 text-xl absolute bottom-10">
             <FaInstagram />
-            <FaSquareYoutube />
+            <FaYoutube />
             <FaFacebook />
             <FaLinkedin />
           </div>
