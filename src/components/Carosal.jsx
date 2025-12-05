@@ -35,12 +35,12 @@ export default function Slider() {
   }, []);
 
   return (
-    <div className="w-full h-[80vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-16 overflow-hidden bg-gray-300">
+    <div className="w-full h-[80vh] flex flex-col md:flex-row items-center justify-between px-6 md:px-16 overflow-hidden bg-gray-800">
       {/* LEFT TEXT SECTION */}
       <div className="w-full md:w-1/2 mt-10 md:mt-0 animate-slideIn">
-        <h2 className="text-3xl md:text-5xl font-bold text-black-400 mb-4">{slides[index].title}</h2>
-        <p className="text-lg md:text-xl text-orange-400 mb-6">{slides[index].desc}</p>
-        <button className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-semibold">
+        <h2 className="text-3xl md:text-5xl font-bold text-blue-400 mb-4">{slides[index].title}</h2>
+        <p className="text-lg md:text-xl text-white mb-6">{slides[index].desc}</p>
+        <button className="px-6 py-3 bg-blue-500 hover:bg-orange-600 text-white rounded-lg font-semibold">
           {slides[index].btn}
         </button>
       </div>

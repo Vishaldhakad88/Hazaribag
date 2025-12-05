@@ -13,6 +13,7 @@ import AllServices from './components/pages/AllServices';
 import About from './components/pages/About';
 
 import { Routes, Route } from 'react-router-dom';
+import Stores from './components/Stores';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
                 <Categories />
                 <ServicesSearch />
                 <BillsData />
+                <Stores />
               </>
             }
           />

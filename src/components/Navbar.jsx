@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaInstagram, FaGithub, FaDribbble, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaDribbble, FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo/logo.png"; // <--- Your logo
@@ -91,8 +91,8 @@ export default function Navbar() {
           {/* Mobile Icons */}
           <div className="flex gap-6 text-xl absolute bottom-10">
             <FaInstagram />
-            <FaGithub />
-            <FaDribbble />
+            <FaSquareYoutube />
+            <FaFacebook />
             <FaLinkedin />
           </div>
         </div>
