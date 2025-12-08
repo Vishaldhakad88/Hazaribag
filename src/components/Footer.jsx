@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo/logo.png";
-import { FaInstagram, FaGithub, FaDribbble, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaDribbble, FaLinkedin, FaYoutube, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -51,11 +51,11 @@ export default function Footer() {
             </div>
 
             <div className="p-3 rounded-2xl bg-white text-gray-900 shadow-[4px_4px_10px_rgba(0,0,0,0.4)] hover:scale-110 hover:shadow-[0_0_20px_#00acee] transition-all cursor-pointer">
-              <FaGithub size={22} />
+              <FaYoutube size={22} />
             </div>
 
             <div className="p-3 rounded-2xl bg-white text-gray-900 shadow-[4px_4px_10px_rgba(0,0,0,0.4)] hover:scale-110 hover:shadow-[0_0_20px_#ea4c89] transition-all cursor-pointer">
-              <FaDribbble size={22} />
+              <FaFacebook size={22} />
             </div>
 
             <div className="p-3 rounded-2xl bg-white text-gray-900 shadow-[4px_4px_10px_rgba(0,0,0,0.4)] hover:scale-110 hover:shadow-[0_0_20px_#0e76a8] transition-all cursor-pointer">

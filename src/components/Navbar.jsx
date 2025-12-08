@@ -27,8 +27,8 @@ export default function Navbar() {
       {/* Desktop Icons + Button */}
       <div className="hidden md:flex items-center gap-6 text-xl">
         <FaInstagram className="cursor-pointer" />
-        <FaGithub className="cursor-pointer" />
-        <FaDribbble className="cursor-pointer" />
+        <FaYoutube className="cursor-pointer" />
+        <FaFacebook className="cursor-pointer" />
         <FaLinkedin className="cursor-pointer" />
 
         <Link to="/download">
