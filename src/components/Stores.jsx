@@ -33,7 +33,7 @@ export default function Stores() {
         {stores.map((store, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-xl shadow-md hover:shadow-xl border p-4 flex flex-col items-center transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+            className="bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col items-center transition-all duration-300 hover:-translate-y-2 cursor-pointer"
           >
             <img
               src={store.img}

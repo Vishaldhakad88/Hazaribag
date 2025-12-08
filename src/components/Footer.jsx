@@ -4,14 +4,14 @@ import { FaInstagram, FaGithub, FaDribbble, FaLinkedin, FaYoutube, FaFacebook } 
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white w-full py-10 px-6">
+    <footer className="bg-black text-white w-full py-10 px-6">
       
       {/* Top Section */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
         {/* Logo + About */}
         <div>
-          <img src={logo} alt="Logo" className="w-24 mb-4 drop-shadow-lg" />
+          <img src={logo} alt="Logo" className="w-40 mb-4 drop-shadow-lg" />
           <p className="text-gray-300 text-sm leading-relaxed">
             Your trusted service platform.  
             We provide premium home, beauty, and wedding solutions.

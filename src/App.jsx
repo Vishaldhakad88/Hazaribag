@@ -5,6 +5,7 @@ import Categories from './components/Categories';
 import ServicesSearch from './components/ServicesSearch';
 import BillsData from './components/BillsData';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';  // ⬅️ LINE 1: Ye add karo
 
 // Pages
 import DownloadApp from './components/pages/DownloadApp';
@@ -18,6 +19,7 @@ import Stores from './components/Stores';
 function App() {
   return (
     <>
+      <CustomCursor />  {/* ⬅️ LINE 2: Ye add karo - Navbar se pehle */}
       <Navbar />
 
       <div className="mt-16">
@@ -28,6 +30,7 @@ function App() {
             path="/"
             element={
               <>
+              {/* <br /> */}
                 <Carosal />
                 <Categories />
                 <ServicesSearch />

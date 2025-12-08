@@ -8,11 +8,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 bg-gray-900 text-white px-6 py-4 flex justify-between items-center">
+    <nav className="w-full fixed top-0 left-0 z-50 bg-black text-white px-6 py-4 flex justify-between items-center">
       
       {/* Logo */}
       <div className="flex items-center gap-3">
-        <img src={logo} alt="Logo" className="w-40 h-10 object-contain" />
+        <img src={logo} alt="Logo" className="w-50 h-15 object-contain" />
       </div>
 
       {/* Desktop Menu */}
@@ -32,7 +32,7 @@ export default function Navbar() {
         <FaLinkedin className="cursor-pointer" />
 
         <Link to="/download">
-          <button className="ml-4 bg-orange-400 hover:bg-orange-600 px-5 py-2 rounded-md text-white text-lg shadow-md">
+          <button className="ml-4 border bg-gray-800 hover:bg-gray-700 px-5 py-2 rounded-md text-white text-lg shadow-md">
             Download App
           </button>
         </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
 
       {/* Mobile Full Screen Menu */}
       {open && (
-        <div className="fixed inset-0 bg-gray-800 text-white flex flex-col justify-start items-start px-10 pt-14 space-y-7 text-2xl transition-all duration-300">
+        <div className="fixed inset-0 bg-black text-white flex flex-col justify-start items-start px-10 pt-14 space-y-7 text-2xl transition-all duration-300">
           
           <button
             onClick={() => setOpen(false)}

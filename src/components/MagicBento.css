@@ -1,0 +1,69 @@
+/* ---- ROOT GLOW VARIABLES ---- */
+.magic-bento-card {
+  position: relative;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 260px;
+}
+
+.magic-bento-card--border-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    circle var(--glow-radius) at var(--glow-x) var(--glow-y),
+    rgba(132, 0, 255, calc(var(--glow-intensity) * 0.8)),
+    transparent 75%
+  );
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ---- PARTICLES ---- */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* ---- SPOTLIGHT BG ---- */
+.global-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 0;
+}
+
+/* ---- TILT + CARD DEPTH ---- */
+.card-3d {
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-style: preserve-3d;
+}
+
+/* ---- BUTTON 3D ---- */
+.btn-3d {
+  background: linear-gradient(145deg, #5f00cc, #8a00ff);
+  box-shadow: 0 8px 18px rgba(130, 50, 255, 0.4);
+  transition: 0.2s ease;
+}
+.btn-3d:hover {
+  transform: translateY(-2px);
+}
+.btn-3d:active {
+  transform: translateY(1px);
+}
+
+/* Icon background */
+.icon-container {
+  background: linear-gradient(135deg, #f3e8ff, #ede9fe);
+  box-shadow: inset 0 0 14px rgba(132, 0, 255, 0.15);
+}

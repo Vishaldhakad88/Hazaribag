@@ -82,7 +82,7 @@ export default function ServicesSearch() {
             onClick={() => setSelectedCategory(cat)}
             className={`px-5 py-2 rounded-full border text-sm font-medium transition-all ${
               selectedCategory === cat
-                ? "bg-blue-600 text-white shadow"
+                ? "bg-gray-600 text-white shadow"
                 : "bg-white hover:bg-blue-50"
             }`}
           >

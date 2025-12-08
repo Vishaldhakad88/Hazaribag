@@ -56,10 +56,10 @@ export default function CarouselVideo() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden rounded-xl bg-black mt-5">
+    <div className="relative md:ml-6 md:w-[1300px] w-full overflow-hidden rounded-xl  mt-25">
       {/* Slider wrapper */}
       <div
-        className="flex transition-transform duration-700"
+        className="flex transition-transform duration-700 "
         style={{ transform: `translateX(-${current * 100}%)` }}
       >
         {videos.map((item, index) => (

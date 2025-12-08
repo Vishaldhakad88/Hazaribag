@@ -36,19 +36,41 @@ const data = [
   { name: "Jobs in Hazaribagh  ", img: Job },
   { name: "Automobile  ", img: Automobile },
   { name: "Agriculture  ", img: Agriculture },
-  // { name: "Professional  ", img: Professional },
 ];
 
 export default function CategoriesGrid() {
   return (
     <div className="w-full p-6 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-6 place-items-center">
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
+        
+        .category-card {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        .category-card:nth-child(2n) {
+          animation-delay: 0.5s;
+        }
+        
+        .category-card:nth-child(3n) {
+          animation-delay: 1s;
+        }
+        
+        .category-card:nth-child(4n) {
+          animation-delay: 1.5s;
+        }
+      `}</style>
+      
       {data.map((item, i) => (
         <div
           key={i}
-          className="flex flex-col items-center text-center cursor-pointer hover:scale-105 transition-all duration-300"
+          className="category-card flex flex-col items-center text-center cursor-pointer"
         >
-          {/* Image Box */}
-          <div className="w-20 h-20 rounded-2xl shadow-md border bg-white flex items-center justify-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+          {/* Image Box with 3D effect and box shadow */}
+          <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_15px_40px_rgb(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-2 transform-gpu">
             <img
               src={item.img}
               alt={item.name}
