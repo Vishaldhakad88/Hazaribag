@@ -16,9 +16,12 @@ import About from './components/pages/About';
 import { Routes, Route } from 'react-router-dom';
 import Stores from './components/Stores';
 
+import ScrollToTop from './components/ScrollToTop';   // ✅ ADDED (NO other changes)
+
 function App() {
   return (
     <>
+      <ScrollToTop />   {/* ✅ ADDED ONLY THIS */}
       {/* <CustomCursor />  ⬅️ LINE 2: Ye add karo - Navbar se pehle */}
       <Navbar />
 
@@ -30,7 +33,7 @@ function App() {
             path="/"
             element={
               <>
-              {/* <br /> */}
+                {/* <br /> */}
                 <Carosal />
                 <Categories />
                 {/* <ServicesSearch /> */}
