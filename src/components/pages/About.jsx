@@ -6,7 +6,7 @@ export default function AboutUs() {
     <section className="w-full bg-white pb-16 px-4 md:px-10 lg:px-20   ">
 
       {/* 🔵 Top Banner Image */}
-      <div className="w-full mb-12 mt-20">
+      <div className="w-full mb-12 mt-30">
         <img
           src={services}
           alt="About Banner"

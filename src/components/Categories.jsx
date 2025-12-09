@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Importing all category images
 import GroceryStore from "../assets/Categories/GroceryStore.png";
@@ -19,7 +19,7 @@ import Professional from "../assets/Categories/Professional.png";
 import Automobile from "../assets/Categories/Automobile.png";
 import Agriculture from "../assets/Categories/Agriculture.png";
 
-const data = [ 
+const data = [
   { name: "Grocery Store", img: GroceryStore },
   { name: "Hotels", img: Hotels },
   { name: "Education", img: Education },
@@ -31,57 +31,92 @@ const data = [
   { name: "Water Supply", img: Water },
   { name: "Wholesale Market", img: Wholesale },
   { name: "Purchase Plot & Land", img: Purchase },
-  { name: " Automobile Rental Property (PG+Flat+Home) ", img: AutomobileRental },
-  { name: "Purchase Flat & Home ", img: Purchas },
-  { name: "Jobs in Hazaribagh  ", img: Job },
-  { name: "Automobile  ", img: Automobile },
-  { name: "Agriculture  ", img: Agriculture },
+  { name: "Automobile Rental Property (PG+Flat+Home)", img: AutomobileRental },
+  { name: "Purchase Flat & Home", img: Purchas },
+  { name: "Jobs in Hazaribagh", img: Job },
+  { name: "Automobile", img: Automobile },
+  { name: "Agriculture", img: Agriculture },
 ];
 
 export default function CategoriesGrid() {
+  const [search, setSearch] = useState("");
+
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
-    <div className="w-full p-6 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-6 place-items-center">
+    <div className="w-full p-6">
+      {/* 🔍 Modern Search Bar */}
+      <div className="flex justify-center mb-8">
+        <div className="relative w-full max-w-lg">
+          <input
+            type="text"
+            placeholder="Search categories..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="
+              w-full py-3 px-5 pl-12 
+              bg-white/20 backdrop-blur-xl border border-gray/30
+              rounded-2xl shadow-lg 
+              text-gray-800 placeholder-gray-600
+              focus:ring-2 focus:ring-blue-400 focus:border-transparent
+              transition-all duration-300 outline-none
+            "
+          />
+          {/* Search Icon */}
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl">
+            🔍
+          </span>
+        </div>
+      </div>
+
+      {/* CSS Animations */}
       <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
+        @keyframes smoothZoom {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.08); }
         }
-        
-        .category-card {
-          animation: float 3s ease-in-out infinite;
-        }
-        
-        .category-card:nth-child(2n) {
-          animation-delay: 0.5s;
-        }
-        
-        .category-card:nth-child(3n) {
-          animation-delay: 1s;
-        }
-        
-        .category-card:nth-child(4n) {
-          animation-delay: 1.5s;
+
+        .zoom-card {
+          animation: smoothZoom 4s ease-in-out infinite;
         }
       `}</style>
-      
-      {data.map((item, i) => (
-        <div
-          key={i}
-          className="category-card flex flex-col items-center text-center cursor-pointer"
-        >
-          {/* Image Box with 3D effect and box shadow */}
-          <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_15px_40px_rgb(0,0,0,0.2)] transition-all duration-300 hover:-translate-y-2 transform-gpu">
-            <img
-              src={item.img}
-              alt={item.name}
-              className="w-14 h-14 object-contain"
-            />
-          </div>
 
-          {/* Text */}
-          <p className="mt-2 text-sm font-medium text-gray-700">{item.name}</p>
-        </div>
-      ))}
+      {/* Grid */}
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-6 place-items-center">
+
+        {filteredData.map((item, i) => (
+          <div
+            key={i}
+            className="zoom-card flex flex-col items-center text-center cursor-pointer transition-all"
+            style={{ animationDelay: `${i * 0.2}s` }} // smooth stagger effect
+          >
+            <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center overflow-hidden 
+              shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
+              hover:shadow-[0_15px_40px_rgb(0,0,0,0.2)]
+              transform-gpu transition-all duration-300 hover:-translate-y-2"
+            >
+              <img
+                src={item.img}
+                alt={item.name}
+                className="w-14 h-14 object-contain"
+              />
+            </div>
+
+            <p className="mt-2 text-sm font-medium text-gray-700">
+              {item.name}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* If no result */}
+      {filteredData.length === 0 && (
+        <p className="text-center text-gray-500 mt-6 text-sm">
+          No categories found...
+        </p>
+      )}
     </div>
   );
 }

@@ -19,7 +19,7 @@ import Stores from './components/Stores';
 function App() {
   return (
     <>
-      <CustomCursor />  {/* ⬅️ LINE 2: Ye add karo - Navbar se pehle */}
+      {/* <CustomCursor />  ⬅️ LINE 2: Ye add karo - Navbar se pehle */}
       <Navbar />
 
       <div className="mt-16">
@@ -33,8 +33,8 @@ function App() {
               {/* <br /> */}
                 <Carosal />
                 <Categories />
-                <ServicesSearch />
-                <BillsData />
+                {/* <ServicesSearch /> */}
+                {/* <BillsData /> */}
                 <Stores />
               </>
             }
