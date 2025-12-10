@@ -45,6 +45,9 @@ export default function CategoriesGrid() {
     item.name.toLowerCase().includes(search.toLowerCase())
   );
 
+  // ⭐ Only 4x4 = 16 items show
+  const limitedData = filteredData.slice(0, 16);
+
   return (
     <div className="w-full p-6">
       {/* 🔍 Modern Search Bar */}
@@ -64,55 +67,45 @@ export default function CategoriesGrid() {
               transition-all duration-300 outline-none
             "
           />
-          {/* Search Icon */}
           <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl">
             🔍
           </span>
         </div>
       </div>
 
-      {/* CSS Animations */}
       <style>{`
         @keyframes smoothZoom {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.08); }
         }
-
         .zoom-card {
           animation: smoothZoom 4s ease-in-out infinite;
         }
       `}</style>
 
-      {/* Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-6 place-items-center">
+      {/* 4x4 Grid (16 items max) */}
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 place-items-center">
 
-        {filteredData.map((item, i) => (
+        {limitedData.map((item, i) => (
           <div
             key={i}
             className="zoom-card flex flex-col items-center text-center cursor-pointer transition-all"
-            style={{ animationDelay: `${i * 0.2}s` }} // smooth stagger effect
+            style={{ animationDelay: `${i * 0.2}s` }}
           >
             <div className="w-20 h-20 rounded-2xl bg-white flex items-center justify-center overflow-hidden 
               shadow-[0_8px_30px_rgb(0,0,0,0.12)] 
               hover:shadow-[0_15px_40px_rgb(0,0,0,0.2)]
               transform-gpu transition-all duration-300 hover:-translate-y-2"
             >
-              <img
-                src={item.img}
-                alt={item.name}
-                className="w-14 h-14 object-contain"
-              />
+              <img src={item.img} alt={item.name} className="w-14 h-14 object-contain" />
             </div>
 
-            <p className="mt-2 text-sm font-medium text-gray-700">
-              {item.name}
-            </p>
+            <p className="mt-2 text-sm font-medium text-gray-700">{item.name}</p>
           </div>
         ))}
       </div>
 
-      {/* If no result */}
-      {filteredData.length === 0 && (
+      {limitedData.length === 0 && (
         <p className="text-center text-gray-500 mt-6 text-sm">
           No categories found...
         </p>
