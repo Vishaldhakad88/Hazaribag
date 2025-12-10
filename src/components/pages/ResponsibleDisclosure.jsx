@@ -164,21 +164,54 @@ export default function ResponsibleDisclosure() {
             </section>
 
             {/* How to Report */}
-            <section className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white p-10 rounded-2xl text-center">
-              <h2 className="text-3xl font-bold mb-6">How to Report a Vulnerability</h2>
-              <p className="text-xl mb-8">
-                Send a detailed report with steps to reproduce, screenshots/videos, and impact assessment to:
-              </p>
-              <a
-                href="mailto:security@hazaribagmarket.com"
-                className="inline-block bg-white text-purple-700 font-bold text-xl px-10 py-5 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-2xl"
-              >
-                security@hazaribagmarket.com
-              </a>
-              <p className="mt-8 text-lg opacity-90">
-                We typically respond within <strong>48 hours</strong> and aim to fix critical issues as fast as possible.
-              </p>
-            </section>
+          <section className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white p-8 sm:p-10 md:p-12 lg:p-14 rounded-2xl text-center shadow-2xl">
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 px-4">
+    How to Report a Vulnerability
+  </h2>
+
+  <p className="text-base sm:text-lg md:text-xl mb-8 px-4 max-w-4xl mx-auto leading-relaxed">
+    Send a detailed report with steps to reproduce, screenshots/videos, and impact assessment to:
+  </p>
+
+  {/* Email Button - Fully Responsive */}
+  <div className="flex justify-center mb-8">
+    <a
+      href="mailto:security@hazaribagmarket.com"
+      className="
+        inline-block 
+        bg-white 
+        text-orange-600 
+        font-bold 
+        text-lg 
+        sm:text-xl 
+        md:text-2xl 
+        px-3 
+        sm:px-10 
+        md:px-14 
+        lg:px-16 
+        py-2 
+        sm:py-3 
+        md:py-6 
+        rounded-full 
+        shadow-2xl 
+        hover:bg-gray-100 
+        hover:scale-105 
+        active:scale-95 
+        transition-all 
+        duration-300 
+        border-4 
+        border-white 
+        hover:border-gray-200
+      "
+    >
+      security@hazaribagmarket.com
+    </a>
+  </div>
+
+  <p className="text-base sm:text-lg md:text-xl opacity-90 px-4">
+    We typically respond within <strong className="text-yellow-300">48 hours</strong> and aim to fix critical issues as fast as possible.
+  </p>
+</section>
 
             {/* Acknowledgements */}
             <section className="text-center py-12 border-t-4 border-dashed border-gray-300">
